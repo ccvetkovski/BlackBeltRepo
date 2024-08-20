@@ -15,12 +15,14 @@ public class CardInFront : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     public AbilityManager.Ability ability;
     public Animator anim;
     public int numCalled;
+    public bool cardSelected =false;
 
     public void OnPointerEnter(PointerEventData pointerEventData)
     {
         child.GetComponent<Canvas>().sortingOrder = child.GetComponent<Canvas>().sortingOrder = 1;
         rect.sizeDelta = new Vector2(111.7f, 180);
         anim.SetBool("isTriggered", true);
+        cardSelected=true;
         AddNum();
     }
 
@@ -35,6 +37,7 @@ public class CardInFront : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
         rect.sizeDelta = new Vector2(100, 157.57f);
         anim.SetBool("isTriggered", false);
         numCalled = 0;
+        cardSelected=false;
     }
 
     public void NoNumCall()
@@ -65,5 +68,13 @@ public class CardInFront : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
         {
             anim.SetBool("isTriggered", false);
         }
+    }
+    public void SelectEffect()
+    {
+        cardSelected=true;
+        child.GetComponent<Canvas>().sortingOrder = child.GetComponent<Canvas>().sortingOrder = 1;
+        rect.sizeDelta = new Vector2(111.7f, 180);
+        anim.SetBool("isTriggered", true);
+        AddNum();
     }
 }
