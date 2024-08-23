@@ -88,70 +88,167 @@ public class AbilityManager : MonoBehaviour
         if(cardViewer.gameObject.activeSelf == true)
         {
             if(Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            if(cardViewer.transform.GetChild(0)!= null)
             {
-                if(cardViewer.transform.GetChild(0).GetComponent<CardInFront>().cardSelected == false)
+                if(cardViewer.transform.GetChild(0)!= null)
                 {
-                    cardViewer.transform.GetChild(0).GetComponent<CardInFront>().SelectEffect();
-                } 
-                else if(cardViewer.transform.GetChild(0).GetComponent<CardInFront>().cardSelected == true)
-                {
-                    AbilityManager.Ability ability = cardViewer.transform.GetChild(0).GetComponent<CardInFront>().ability;
+                    if(cardViewer.transform.GetChild(0).GetComponent<CardInFront>().cardSelected == false)
+                    {
+                        cardViewer.transform.GetChild(0).GetComponent<CardInFront>().SelectEffect();
+                    } 
+                    else if(cardViewer.transform.GetChild(0).GetComponent<CardInFront>().cardSelected == true)
+                    {
+                        AbilityManager.Ability ability = cardViewer.transform.GetChild(0).GetComponent<CardInFront>().ability;
 
-                    player.GetComponent<DeerMovement>().UseAbility(ability);
-                    abilities.Remove(ability);
-                    Destroy(cardViewer.transform.GetChild(0).gameObject);
+                        player.GetComponent<DeerMovement>().UseAbility(ability);
+                        abilities.Remove(ability);
+                        Destroy(cardViewer.transform.GetChild(0).gameObject);
+                    }
+                }
+            }
+            if(Input.GetKeyDown(KeyCode.Alpha2))
+            {
+                if(cardViewer.transform.GetChild(1)!= null)
+                {
+                    if(cardViewer.transform.GetChild(1).GetComponent<CardInFront>().cardSelected == false)
+                    {
+                        cardViewer.transform.GetChild(1).GetComponent<CardInFront>().SelectEffect();
+                    } 
+                    else if(cardViewer.transform.GetChild(1).GetComponent<CardInFront>().cardSelected == true)
+                    {
+                        AbilityManager.Ability ability = cardViewer.transform.GetChild(1).GetComponent<CardInFront>().ability;
+
+                        player.GetComponent<DeerMovement>().UseAbility(ability);
+                        abilities.Remove(ability);
+                        Destroy(cardViewer.transform.GetChild(1).gameObject);
+                    }
+                }
+            }
+            if(Input.GetKeyDown(KeyCode.Alpha3))
+            {
+                if(cardViewer.transform.GetChild(2)!= null)
+                {
+                    if(cardViewer.transform.GetChild(2).GetComponent<CardInFront>().cardSelected == false)
+                    {
+                        cardViewer.transform.GetChild(2).GetComponent<CardInFront>().SelectEffect();
+                    } 
+                    else if(cardViewer.transform.GetChild(2).GetComponent<CardInFront>().cardSelected == true)
+                    {
+                        AbilityManager.Ability ability = cardViewer.transform.GetChild(2).GetComponent<CardInFront>().ability;
+
+                        player.GetComponent<DeerMovement>().UseAbility(ability);
+                        abilities.Remove(ability);
+                        Destroy(cardViewer.transform.GetChild(2).gameObject);
+                    }
+                }
+            }
+            if(Input.GetKeyDown(KeyCode.Alpha4))
+            {
+                if(cardViewer.transform.GetChild(3)!= null)
+                {
+                    if(cardViewer.transform.GetChild(3).GetComponent<CardInFront>().cardSelected == false)
+                    {
+                        cardViewer.transform.GetChild(3).GetComponent<CardInFront>().SelectEffect();
+                    } 
+                    else if(cardViewer.transform.GetChild(3).GetComponent<CardInFront>().cardSelected == true)
+                    {
+                        AbilityManager.Ability ability = cardViewer.transform.GetChild(3).GetComponent<CardInFront>().ability;
+
+                        player.GetComponent<DeerMovement>().UseAbility(ability);
+                        abilities.Remove(ability);
+                        Destroy(cardViewer.transform.GetChild(3).gameObject);
+                    }
+                }
+            }
+            if(Input.GetKeyDown(KeyCode.Alpha5))
+            {
+                if(cardViewer.transform.GetChild(4)!= null)
+                {
+                    if(cardViewer.transform.GetChild(4).GetComponent<CardInFront>().cardSelected == false)
+                    {
+                        cardViewer.transform.GetChild(4).GetComponent<CardInFront>().SelectEffect();
+                    } 
+                    else if(cardViewer.transform.GetChild(4).GetComponent<CardInFront>().cardSelected == true)
+                    {
+                        AbilityManager.Ability ability = cardViewer.transform.GetChild(4).GetComponent<CardInFront>().ability;
+
+                        player.GetComponent<DeerMovement>().UseAbility(ability);
+                        abilities.Remove(ability);
+                        Destroy(cardViewer.transform.GetChild(4).gameObject);
+                    }
+                }
+            }
+            if(Input.GetKeyDown(KeyCode.Alpha6))
+            {
+                if(cardViewer.transform.GetChild(5)!= null)
+                {
+                    if(cardViewer.transform.GetChild(5).GetComponent<CardInFront>().cardSelected == false)
+                    {
+                        cardViewer.transform.GetChild(5).GetComponent<CardInFront>().SelectEffect();
+                    } 
+                    else if(cardViewer.transform.GetChild(5).GetComponent<CardInFront>().cardSelected == true)
+                    {
+                        AbilityManager.Ability ability = cardViewer.transform.GetChild(5).GetComponent<CardInFront>().ability;
+
+                        player.GetComponent<DeerMovement>().UseAbility(ability);
+                        abilities.Remove(ability);
+                        Destroy(cardViewer.transform.GetChild(5).gameObject);
+                    }
+                }
+            }
+            if(Input.GetKeyDown(KeyCode.Alpha7))
+            {
+                if(cardViewer.transform.GetChild(6)!= null)
+                {
+                    if(cardViewer.transform.GetChild(6).GetComponent<CardInFront>().cardSelected == false)
+                    {
+                        cardViewer.transform.GetChild(6).GetComponent<CardInFront>().SelectEffect();
+                    } 
+                    else if(cardViewer.transform.GetChild(6).GetComponent<CardInFront>().cardSelected == true)
+                    {
+                        AbilityManager.Ability ability = cardViewer.transform.GetChild(6).GetComponent<CardInFront>().ability;
+
+                        player.GetComponent<DeerMovement>().UseAbility(ability);
+                        abilities.Remove(ability);
+                        Destroy(cardViewer.transform.GetChild(6).gameObject);
+                    }
+                }
+            }
+            if(Input.GetKeyDown(KeyCode.Alpha8))
+            {
+                if(cardViewer.transform.GetChild(7)!= null)
+                {
+                    if(cardViewer.transform.GetChild(7).GetComponent<CardInFront>().cardSelected == false)
+                    {
+                        cardViewer.transform.GetChild(7).GetComponent<CardInFront>().SelectEffect();
+                    } 
+                    else if(cardViewer.transform.GetChild(7).GetComponent<CardInFront>().cardSelected == true)
+                    {
+                        AbilityManager.Ability ability = cardViewer.transform.GetChild(7).GetComponent<CardInFront>().ability;
+
+                        player.GetComponent<DeerMovement>().UseAbility(ability);
+                        abilities.Remove(ability);
+                        Destroy(cardViewer.transform.GetChild(7).gameObject);
+                    }
+                }
+            }
+            if(Input.GetKeyDown(KeyCode.Alpha9))
+            {
+                if(cardViewer.transform.GetChild(8)!= null)
+                {
+                    if(cardViewer.transform.GetChild(8).GetComponent<CardInFront>().cardSelected == false)
+                    {
+                        cardViewer.transform.GetChild(8).GetComponent<CardInFront>().SelectEffect();
+                    } 
+                    else if(cardViewer.transform.GetChild(8).GetComponent<CardInFront>().cardSelected == true)
+                    {
+                        AbilityManager.Ability ability = cardViewer.transform.GetChild(8).GetComponent<CardInFront>().ability;
+
+                        player.GetComponent<DeerMovement>().UseAbility(ability);
+                        abilities.Remove(ability);
+                        Destroy(cardViewer.transform.GetChild(8).gameObject);
+                    }
                 }
             }
         }
-        if(Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            if(cardViewer.transform.GetChild(1)!= null)
-            {
-                if(cardViewer.transform.GetChild(1).GetComponent<CardInFront>().cardSelected == false)
-                {
-                    cardViewer.transform.GetChild(1).GetComponent<CardInFront>().SelectEffect();
-                } 
-                else if(cardViewer.transform.GetChild(1).GetComponent<CardInFront>().cardSelected == true)
-                {
-                    AbilityManager.Ability ability = cardViewer.transform.GetChild(0).GetComponent<CardInFront>().ability;
-
-                    player.GetComponent<DeerMovement>().UseAbility(ability);
-                    abilities.Remove(ability);
-                    Destroy(cardViewer.transform.GetChild(1).gameObject);
-                }
-            }
-        }
-        if(Input.GetKeyDown(KeyCode.Alpha3))
-        {
-
-        }
-        if(Input.GetKeyDown(KeyCode.Alpha4))
-        {
-
-        }
-        if(Input.GetKeyDown(KeyCode.Alpha5))
-        {
-
-        }
-        if(Input.GetKeyDown(KeyCode.Alpha6))
-        {
-
-        }
-        if(Input.GetKeyDown(KeyCode.Alpha7))
-        {
-
-        }
-        if(Input.GetKeyDown(KeyCode.Alpha8))
-        {
-
-        }
-        if(Input.GetKeyDown(KeyCode.Alpha9))
-        {
-
-        }
-        }
-
     }
 }

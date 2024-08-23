@@ -8,6 +8,7 @@ public class EnemyAbility : MonoBehaviour
     public GameObject player;
     public float healthPoints;
     public GameObject winScreen;
+    public CapsuleCollider col;
 
     private void AddAbility()
     {
@@ -48,6 +49,6 @@ public class EnemyAbility : MonoBehaviour
 
     private void Update()
     {
-        
+        col.enabled = true;
     }
 }

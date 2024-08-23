@@ -5,6 +5,7 @@ using System.Diagnostics;
 using System.Security.Cryptography;
 using UnityEngine;
 using Debug = UnityEngine.Debug;
+using UnityEngine.SceneManagement;
 
 public class DeerMovement : MonoBehaviour
 {
@@ -63,6 +64,8 @@ public class DeerMovement : MonoBehaviour
 
     int LastInputDirection;
 
+    public float dashTime;
+
     void Update()
     {
         float horizontal = Input.GetAxisRaw("Horizontal");
@@ -98,6 +101,16 @@ public class DeerMovement : MonoBehaviour
         {
             playerRB.AddForce(0, jumpHeight, 0, ForceMode.Impulse);
             isJumping = true;
+        }
+
+        if(Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            StartCoroutine(Dash());
+        }
+
+        if(Input.GetKeyDown(KeyCode.R))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
 
@@ -190,5 +203,12 @@ public class DeerMovement : MonoBehaviour
         playerRB.AddForce(0, -20, 0, ForceMode.Impulse);
         hs.damage = 100;
         Debug.Log(hs.damage);
+    }
+
+    IEnumerator Dash()
+    {
+        speed = 15f;
+        yield return new WaitForSeconds(dashTime);
+        speed = 6f;
     }
 }

@@ -23,15 +23,12 @@ public class EnemyDamage : MonoBehaviour
     public HealthSystem hs;
 
     public bool isPlayerDamaged = false;
-
-    public Animator cameraAnim;
-
+    public GameObject playerObj;
     public float healRate;
 
     void Start()
     {
         gameObject.SetActive(true);
-        cameraAnim.enabled = false;
         hit.enabled = false;
     }
         
@@ -57,7 +54,6 @@ public class EnemyDamage : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             isPlayerDamaged = false;
-            cameraAnim.enabled = false;
             enemy = null;
             hit.enabled = false;
         }
@@ -78,7 +74,6 @@ public class EnemyDamage : MonoBehaviour
         if (isPlayerDamaged == true)
         {
             hs.playerHealth -= playerDamage; 
-            cameraAnim.enabled = true;
             hit.enabled = true;
             hitParticle.Play();
         }
@@ -100,7 +95,6 @@ public class EnemyDamage : MonoBehaviour
         {
             gameObject.SetActive(true);
             hs.playerHealth -= 0;
-            cameraAnim.enabled = false;
         }
 
         if (isPlayerDamaged == false)
@@ -122,9 +116,9 @@ public class EnemyDamage : MonoBehaviour
             hs.playerHealth = 100;
         }
 
-        if(hs.playerHealth < 0)
+        if(hs.playerHealth <= 0)
         {
-            hs.playerHealth = 0;
+            Destroy(playerObj);
         }
     }
 }

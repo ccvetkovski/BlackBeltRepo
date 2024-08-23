@@ -14,17 +14,20 @@ public class DropDown : MonoBehaviour
 
     public float dropSpeed=0.1f;
 
-    private float fraction = 1; // 1= defaulHeight,  0 = targetHeight
+    private float fraction = 1;
+    
+    public int offset; // 1= defaulHeight,  0 = targetHeight
     // Start is called before the first frame update
     void Start()
     {
-        defaultHeight = enemy.transform.position.y;
-        targetHeight = target.transform.position.y;
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        defaultHeight = enemy.transform.position.y;
+        targetHeight = target.transform.position.y;
         if (target != null)
         {
             bool inRange = Vector3.Distance(transform.position, target.position) <= dropDistance;
@@ -34,7 +37,7 @@ public class DropDown : MonoBehaviour
                 {
                     fraction = fraction - (Time.deltaTime * dropSpeed);
                 }
-                enemy.transform.localPosition = new Vector3(enemy.transform.localPosition.x, Mathf.Lerp(targetHeight, defaultHeight, fraction), enemy.transform.localPosition.z);
+                enemy.transform.localPosition = new Vector3(enemy.transform.localPosition.x, Mathf.Lerp(targetHeight - offset, defaultHeight, fraction), enemy.transform.localPosition.z);
             }
             else
             {
