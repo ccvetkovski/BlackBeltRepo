@@ -11,8 +11,10 @@ public class TongueTrap : MonoBehaviour
     public float abilityTime = 3;
     public float waitTimer = 0;
     public GameObject enemy;
+    public float damageAmount;
 
     public HealthSystem hs;
+    public EnemyAbility ea; 
 
     void Start()
     {
@@ -23,7 +25,8 @@ public class TongueTrap : MonoBehaviour
     {
         if (other.CompareTag("BoxEnemy") && enemy == null)
         {
-            enemy = other.gameObject; 
+            enemy = other.gameObject;
+            ea = enemy.GetComponent<EnemyAbility>();
             waitTimer = 4;
             hs.damage++;
         }
@@ -35,6 +38,7 @@ public class TongueTrap : MonoBehaviour
         {
             enemy.GetComponent<BoxCollider>().enabled = false;
             enemy.transform.position = tongue.gameObject.transform.position;
+            ea.healthPoints -= damageAmount;
             waitTimer = waitTimer - Time.deltaTime;
         }
 
@@ -47,6 +51,7 @@ public class TongueTrap : MonoBehaviour
         {
             enemy.GetComponent<BoxCollider>().enabled = true;
             enemy = null;
+            ea.healthPoints -= 0f;
             gameObject.SetActive(false);
         }
     }

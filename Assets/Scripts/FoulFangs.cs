@@ -11,6 +11,8 @@ public class FoulFangs : MonoBehaviour
     public float abilityTime = 3;
     public float waitTimer = 0;
     public GameObject enemy;
+    public float damageAmount;
+
 
     public HealthSystem hs; 
     public EnemyAbility ea; 
@@ -36,7 +38,7 @@ public class FoulFangs : MonoBehaviour
         if (waitTimer > 0)
         {
             waitTimer = waitTimer - Time.deltaTime;
-            ea.healthPoints -= 0.7f;
+            ea.healthPoints -= damageAmount;
         }
 
         if (waitTimer < 0 && enemy == null)
